@@ -1,0 +1,14 @@
+id_pelanggaran,pelanggaran,id_jenis,poin
+1,Terlambat datang ke Sekolah,1,20
+2,Spion tidak lengkap,2,20
+3,Knalpot tidak sesuai standart pabrikan,2,20
+4,Body tidak sesuai standart pabrikan,2,20
+5,Berbonceng lebih dari 2 orang,2,20
+6,Tidak memakai Helm,2,20
+7,Tidak memakai dasi / hasduk,3,20
+8,Sepatu tidak sesuai,3,20
+9,Kaos kaki tidak sesuai,3,20
+10,Baju dan celana tidak rapi,4,20
+11,Rambut panjang (gondrong),4,20
+12,Kuku jari panjang,4,20
+13,Tidak patuh Protokol Kesehatan,5,25
