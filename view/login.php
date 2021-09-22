@@ -11,7 +11,7 @@
 
 <body>
 
-    <nav class="navbar shadow-lg navbar-expand-lg navbar-dark" style="background-color:#464660;">
+    <nav class="navbar shadow-sm navbar-expand-lg navbar-dark" style="background-color:#464660;">
         <div class="container">
 
             <a class="navbar-brand" href="#"> <img src="asset/img/usericon.png" width="40" alt=""> Kedisiplinan SMKN 1 Banyuwangi</a>
@@ -31,16 +31,29 @@
     </nav>
 
 
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-md-8">
-
+                <h3>Pengendali Tata Tertib SMKN 1 Banyuwangi</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, suscipit! Quibusdam veritatis adipisci corporis maiores, non numquam voluptatem in ea nisi mollitia architecto vero fuga ullam nihil commodi nam. Unde consequuntur recusandae ducimus voluptatem dolores beatae iste. Vitae aliquid tempora suscipit! Adipisci dolores sed rerum totam, reprehenderit pariatur excepturi quisquam quam nam molestiae veniam. Quibusdam, esse! Vel fugiat at, blanditiis quae similique tenetur sint nemo eum, provident aut eius culpa. Numquam nisi vitae nemo eius ullam officia dignissimos iste dolorum?</p>
             </div>
 
             <div class="col-md-4">
-                <div class="card">
+                <div class="card" style="background-color:#F0D9FF">
+
                     <div class="card-body">
-                        
+                        <form action="" method="post">
+                            <h4 class="ps-2 mb-3">Login Tatib</h4>
+                            <div class="form-group">
+                                <input type="text" name="username" class="rounded-pill form-control" placeholder="Username">
+                            </div>
+                            <div class="form-group mt-2">
+                                <input type="password" name="password" class="form-control rounded-pill" placeholder="Password">
+                            </div>
+                            <div class="form-group mt-3">
+                                <button class="btn btn-primary rounded-pill ps-4 pe-4" type="submit">Login</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
