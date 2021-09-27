@@ -140,8 +140,8 @@ if (!empty($_GET['sis'])) {
                     foreach ($list_pelanggaran as $lp) {
                     ?>
                         <div class="col-md-3 mb-2">
-                            <div class="card">
-                                <div class="card-body">
+                            <div class="card" style="<?=$pelanggaran->warna($lp['id_jenis'])?>">
+                                <div class="card-body text-light fw-bold">
                                     <a href="?p=input_pelanggaran&sis=<?=$_GET['sis']?>&pel=<?=$lp['id_pelanggaran']?>"> <img src="asset/img/<?= $lp['pic'] ?>" width="50" alt=""> </a>
                                     <br>
                                     <span>

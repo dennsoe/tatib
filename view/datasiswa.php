@@ -18,39 +18,49 @@
         </div>
     </div>
 </form>
+
 <div class="row">
-    <div class="col-md-12 mt-3">
-        <div class="row">
-            <?php
-            if (!empty($_POST['nama'])) {
-                $carisiswa = $siswa->cariWildCard($con, $_POST['nama']);
-                foreach ($carisiswa as $cs) {
-                    if (!empty($cs['nama'])) {
+    <div class="col-md-8 mt-2">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width:20%">Pilih</th>
+                            <th>Nama</th>
+                            <th>Kelas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        if (!empty($_POST['nama'])) {
+                            $carisiswa = $siswa->cariWildCard($con, $_POST['nama']);
+                            foreach ($carisiswa as $cs) {
+                                if (!empty($cs['nama'])) {
+                        ?>
+                                    <tr>
+                                        <td class="text-center">
+                                            <a href="?p=input_pelanggaran&sis=<?= $cs['id_siswa'] ?>" class="rounded-pill btn btn-sm btn-success"><i class="bi-check-circle"></i> Pilih</a>
+                                        </td>
+                                        <td>
+                                            <?= $cs['nama'] ?>
+                                        
+                                        </td>
+                                        <td><?= $cs['nm_kelas'] ?></td>
+                                    </tr>
+                        <?php
+                                } else {
+                                    echo "Tidak ada siswa";
+                                }
+                            }
+                        }
+                        ?>
 
 
-            ?>
-
-                        <div class="col-md-3">
-                            <div class="card" style="background-color:#D7E9F7">
-                                <div class="card-body">
-                                    <h4 class="text-primary"><?= $cs['nama'] ?></h4>
-                                    <span class="fw-bold">Kelas : <?= $cs['nm_kelas'] ?></span>
-                                    <a href="?p=input_pelanggaran&sis=<?= $cs['id_siswa'] ?>" class="rounded-pill ps-3 pe-3 float-end btn btn-success"><i class="bi-check-circle"></i> Pilih</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-            <?php
-                    } else {
-                        echo "Tidak ada siswa";
-                    }
-                }
-            }
-            ?>
-
-
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
+
