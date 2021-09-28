@@ -37,15 +37,15 @@ if (empty($_SESSION['id'])) {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav fw-bold">
+                    <ul class="navbar-nav">
                         <li class="nav-item ms-3">
-                            <a class="nav-link" href="?p=home">Home</a>
+                            <a class="nav-link <?= hal('home') ?>" href="?p=home">Statistik</a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="nav-link" href="?p=siswa">Input Pelanggaran</a>
+                            <a class="nav-link <?= hal('siswa') ?> <?= hal('input_pelanggaran') ?>" href="?p=siswa">Input Pelanggaran</a>
                         </li>
                         <li class="nav-item ps-3">
-                            <a class="nav-link" href="?p=rekap">Rekapitulasi</a>
+                            <a class="nav-link <?= hal('rekap') ?>" href="?p=rekap">Rekapitulasi</a>
                         </li>
                         <li class="nav-item ps-4">
                             <a class="nav-link" href="#" data-bs-target="#logout" data-bs-toggle="modal">Logout</a>

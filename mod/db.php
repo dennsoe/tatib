@@ -46,7 +46,18 @@ function tgl_indo($time){
 }
 
 
-//Warna Pelanggaran
+//set halaman aktif
+function hal($hal)
+{
+	if($_GET['p']==$hal)
+	{
+		$oke = "active fw-bold";
+	}else
+	{
+		$oke = "";
+	}
+	return $oke;
+}
 
 
 
