@@ -30,7 +30,7 @@ if (!empty($_GET['sis'])) {
 <div class="row">
 
 
-    <div class="col-md-5 mt-2">
+    <div class="col-md-8 mt-2">
         <div class="card">
             <form action="" method="post">
                 <div class="card-body">
@@ -52,8 +52,8 @@ if (!empty($_GET['sis'])) {
                                         <input type="hidden" name="id_pelanggaran" value="<?= $id_pelanggaran ?>">
                                         <input type="text" class="form-control" value="<?= $nm_pelanggaran ?>" placeholder="Pilih daftar pelanggaran" readonly>
                                     </div>
-                                    <div class="col-md-1">
-                                        <a data-bs-toggle="modal" data-bs-target="#crpel2" class=" float-end btn btn-danger"><i class="bi-search"></i></a>
+                                    <div class="col-md-2">
+                                        <a data-bs-toggle="modal" data-bs-target="#crpel2" class=" btn btn-danger"><i class="bi-search"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -81,6 +81,7 @@ if (!empty($_GET['sis'])) {
         <div class="card">
             <div class="card-header">
                 Daftar Pelanggaran
+                <a href="?p=cetakpelanggaran" class="btn btn-success"><i class=" bi-printer"></i> Cetak</a>
                 <span class="float-end">Total Poin : <badge class="btn btn-sm btn-danger"><?= $jum_poin; ?></badge></span>
             </div>
             <div class="card-body">
@@ -111,8 +112,7 @@ if (!empty($_GET['sis'])) {
                                     </a>
                                 </td>
                             </tr>
-                        <?php $no++;
-                        } ?>
+                        <?php $no++; } ?>
 
                     </tbody>
                 </table>
@@ -128,7 +128,7 @@ if (!empty($_GET['sis'])) {
 
 
 <div class="modal fade" id="crpel2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Pelanggaran</h5>
@@ -139,9 +139,9 @@ if (!empty($_GET['sis'])) {
                     <?php
                     foreach ($list_pelanggaran as $lp) {
                     ?>
-                        <div class="col-md-3 mb-2">
-                            <div class="card">
-                                <div class="card-body">
+                        <div class="col-md-5 mb-2">
+                            <div class="card" style="<?=$pelanggaran->warna($lp['id_jenis'])?>">
+                                <div class="card-body text-light fw-bold">
                                     <a href="?p=input_pelanggaran&sis=<?=$_GET['sis']?>&pel=<?=$lp['id_pelanggaran']?>"> <img src="asset/img/<?= $lp['pic'] ?>" width="50" alt=""> </a>
                                     <br>
                                     <span>

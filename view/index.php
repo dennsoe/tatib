@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (empty($_SESSION['id'])) {
+    header('location:?p=login');
+} else {
+    $id_user = $_SESSION['id'];
+    $namauser = $_SESSION['nama'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,30 +22,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
     <!-- data table -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap4.min.css">
-    <link rel="shortcut icon" href="asset/img/usericon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="asset/img/smk.png" type="image/x-icon">
     <title>Kedisiplinan SMKN 1 Banyuwangi</title>
 
 </head>
 
-<body>
+<body class="bg-light">
     <nav class="navbar shadow-lg navbar-expand-lg navbar-dark" style="background-color:#464660;">
         <div class="container">
 
-            <a class="navbar-brand" href="#"> <img src="asset/img/usericon.png" width="40" alt=""> Kedisiplinan SMKN 1 Banyuwangi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a href="#" class=""><img src="asset/img/smk.png" width="40" alt=""></a>
             <div class="float-end">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav fw-bold">
+                    <ul class="navbar-nav">
                         <li class="nav-item ms-3">
-                            <a class="nav-link" href="?p=home">Home</a>
+                            <a class="nav-link <?= hal('home') ?>" href="?p=home">Statistik</a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="nav-link" href="?p=siswa">Input Pelanggaran</a>
+                            <a class="nav-link <?= hal('siswa') ?> <?= hal('input_pelanggaran') ?>" href="?p=siswa">Input Pelanggaran</a>
                         </li>
                         <li class="nav-item ps-3">
-                            <a class="nav-link" href="?p=rekap">Rekapitulasi</a>
+                            <a class="nav-link <?= hal('rekap') ?>" href="?p=rekap">Rekapitulasi</a>
+                        </li>
+                        <li class="nav-item ps-4">
+                            <a class="nav-link" href="#" data-bs-target="#logout" data-bs-toggle="modal">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -50,25 +63,31 @@
     </div>
 
     <div class="container mt-2">
-        <!-- <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        test
-                    </div>
-                    <div class="card-body">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex dolorem placeat tenetur aspernatur aut dolore ea itaque aliquid impedit unde!
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <?php
         include('page.php');
         ?>
     </div>
 
     <div class="container">
-
+        <!-- MOdal Logout -->
+        <div class="modal fade" id="logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Konfirmasi</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Yakin anda ingin keluar dari aplikasi ini ?</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nggak Jadi</button>
+                        <a href="?p=logout" class="btn btn-danger">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MOdal Logout -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

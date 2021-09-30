@@ -6,7 +6,19 @@
         
         if ($p=="login")
         {
+            if (!empty($_POST['username']) && !empty($_POST['username']))
+            {
+                $username = $_POST['username'];
+                $password = md5($_POST['password']);
+                $user->login($con,$username,$password);
+            } 
             include('view/login.php');
+        }
+        elseif($p=="logout")
+        {
+            session_start();
+            session_destroy();
+            header('location:?p=login');
         }
         elseif ($p=="siswa")
         {
@@ -66,8 +78,8 @@
             $list_kelas = $kelas->showAll($con);
 
             if (!empty($_POST['id_kelas'])) {
-                $tgl1 = $_POST['tgl1'];
-                $tgl2 = $_POST['tgl2'];
+                $tgl1 = strtotime($_POST['tgl1']);
+                $tgl2 = strtotime($_POST['tgl2']);
                 $id_kelas = $_POST['id_kelas'];
                 $kel = $kelas->find($con, $id_kelas);
                 $nm_kelas = $kel['nm_kelas'];
@@ -75,19 +87,28 @@
                 $tgl1 = "";
                 $tgl2 = "";
                 $nm_kelas = "";
-        }
-
-
-        
+            }
             
             include('view/index.php');
         }
 
+        elseif ($p=="cetakpelanggaran")
+        {
+            if (!empty($_GET['sis']))
+            {
+                $pelanggaran_siswa = $pelanggaran->perSiswaNow($con, $_GET['sis']);
+            }
+            include('view/cetakpelanggaran.php');
+        }
+
         elseif($p=="home")
         {
-            $title="Selamat Datang, Pelopor Kedisiplinan SMKN 1 Banyuwangi";
+            $title="Selamat Datang,";
             include('view/index.php');
         }
+    } else
+    {
+        header('location:?p=home');
     }
 
 ?>

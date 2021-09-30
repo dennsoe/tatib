@@ -2,6 +2,9 @@
 
     include('mod/db.php');
 
+    include('mod/login.php');
+    $user = new user;
+
     include('mod/kelas.php');
     $kelas = new kelas;
 

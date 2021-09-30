@@ -4,7 +4,7 @@
     $hostDB			= "localhost";
     $usernameDB		= "root";
     $passwordDB		= "";
-    $namaDB			= "pelanggaran";
+    $namaDB			= "tatib";
 
     $con = mysqli_connect($hostDB,$usernameDB,$passwordDB,$namaDB);
 
@@ -44,6 +44,24 @@ function tgl_indo($time){
  
 	return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
 }
+
+
+//set halaman aktif
+function hal($hal)
+{
+	if($_GET['p']==$hal)
+	{
+		$oke = "active fw-bold";
+	}else
+	{
+		$oke = "";
+	}
+	return $oke;
+}
+
+
+
+
 
     
 ?>
