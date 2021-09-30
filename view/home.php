@@ -7,15 +7,15 @@
     <div class="col-md-12">
         <div class="card ">
             <div class="card-header ">
-                Data Statistik Pelanggaran
+                Jumlah Pelanggaran
             </div>
             <div class="card-body">
                 <div class="row">
 
-                    <div class="col-md-2 mb-2">
+                    <div class="col-sm-4 mb-2">
                         <div class="card ">
                             <div class="card-header bg-danger text-light">
-                                Jumlah Hari Ini
+                                Hari Ini
                             </div>
                             <div class="card-body text-center">
                                 <strong class="fs-2"><?=$jumlahhariini[0]?></strong>
@@ -24,10 +24,10 @@
                         </div>
                     </div>
 
-                    <div class="col-md-2 mb-2">
+                    <div class="col-sm-4 mb-2">
                         <div class="card ">
                             <div class="card-header bg-danger text-light">
-                                Jumlah Per Semester
+                                Per Semester
                             </div>
                             <div class="card-body text-center">
                                 <strong class="fs-2"><?=$jumlahAll[0]?></strong>

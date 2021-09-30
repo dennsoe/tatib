@@ -88,11 +88,17 @@
                 $tgl2 = "";
                 $nm_kelas = "";
             }
-
-
-        
             
             include('view/index.php');
+        }
+
+        elseif ($p=="cetakpelanggaran")
+        {
+            if (!empty($_GET['sis']))
+            {
+                $pelanggaran_siswa = $pelanggaran->perSiswaNow($con, $_GET['sis']);
+            }
+            include('view/cetakpelanggaran.php');
         }
 
         elseif($p=="home")
