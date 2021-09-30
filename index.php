@@ -2,6 +2,9 @@
 
     include('mod/db.php');
 
+    include('mod/penindak.php');
+    $penindak = new penindak;
+    
     include('mod/login.php');
     $user = new user;
 

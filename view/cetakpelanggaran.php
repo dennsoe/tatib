@@ -33,20 +33,17 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="service">Design</td>
-                    <td class="desc">Creating a recognizable design solution based on the company's existing visual identity</td>
-                    <td class="unit">$40.00</td>
+                    <td class="service">Tanggal Pelanggaran</td>
+                    <td class="desc">Jenis Pelanggaran</td>
+                    <td class="unit">Point</td>
                 </tr>
             </tbody>
         </table>
-        <div id="notices">
-            <div>NOTICE:</div>
-            <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+        <div>
+            <span>Dengan ini menyatakan bahwa dengan penuh kesadaran, saya tidak akan mengulangi kembali benuk pelanggaran apapun yang telah ditetapkan di sekolah ini. Dan apabila dikemudian hari saya melakukan pelanggaran kembali maka saya siap menerima sanksi yang telah di tetapkan sekolah berdasarkan pasal ketentuan kedisiplinan SMKN 1 Banyuwangi</span>
         </div>
     </main>
-    <footer>
-        Invoice was created on a computer and is valid without the signature and seal.
-    </footer>
+   
 </body>
 
 </html>

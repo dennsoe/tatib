@@ -96,9 +96,13 @@
         {
             if (!empty($_GET['sis']))
             {
-                $pelanggaran_siswa = $pelanggaran->perSiswaNow($con, $_GET['sis']);
+                $p_siswa = $pelanggaran->perSiswaNow($con, $_GET['sis']);
+                $j_poin = $pelanggaran->jumlahPerSiswaNow($con,$_GET['sis']);
+                $dtsiswa = $siswa->find($con,$_GET['sis']);
+                $pd=$penindak->show($con);
+                
             }
-            include('view/cetakpelanggaran.php');
+            include('view/ctpel.php');
         }
 
         elseif($p=="home")
