@@ -81,7 +81,7 @@ if (!empty($_GET['sis'])) {
         <div class="card">
             <div class="card-header">
                 Daftar Pelanggaran
-                <a href="?p=cetakpelanggaran" class="btn btn-sm btn-success"><i class=" bi-printer"></i> Cetak</a>
+                <a href="?p=cetakpelanggaran&sis=<?=$id_siswa?>" class="btn btn-sm btn-success"><i class=" bi-printer"></i> Cetak</a>
                 <span class="float-end">Total Poin : <badge class="btn btn-sm btn-danger"><?= $jum_poin; ?></badge></span>
             </div>
             <div class="card-body">
